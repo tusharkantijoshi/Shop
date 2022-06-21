@@ -1,3 +1,58 @@
+var productData = {
+   "product": [
+      {
+         "id": 1,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 2,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 3,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 4,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 5,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 6,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 7,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 8,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 9,
+         "title": "Product Name",
+         "price": "$ 78"
+      },
+      {
+         "id": 10,
+         "title": "Product Name",
+         "price": "$ 78"
+      }
+   ]
+}
+
 //! Cart
 const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
@@ -22,6 +77,10 @@ if (document.readyState == 'loading') {
 
 //! ready function
 function ready() {
+
+   //! Adding Product Lists
+   productData.product.forEach(data => loadProduct(data));
+
    //! Remove items from cart
    const removeCartButton = document.getElementsByClassName('cart-remove');
    for (let i = 0; i < removeCartButton.length; i++) {
@@ -128,4 +187,32 @@ function updateTotal() {
 
 }
 
+//! Adding Product Lists
+function loadProduct(data) {
+
+   let div = document.createElement('div')
+   div.classList.add('pro')
+
+   let productContainer = document.getElementsByClassName('pro-container')[0]
+
+   let productContent = `
+                  <span id="free">Free Shipping</span>
+
+                  <img src="./img/card6.png" alt="product" class="product-img">
+
+                  <div class="des">
+                     <h5 class="product-title">${data.title}</h5>
+                     <h4 class="price">${data.price}</h4>
+                     <span>or 9 x $1.21</span>
+                  </div>
+
+                  <button class="btn add-cart">
+                     Add To Cart
+                  </button>
+`
+
+   div.innerHTML = productContent
+   productContainer.append(div);
+
+}
 
