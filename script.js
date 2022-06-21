@@ -2,52 +2,52 @@ var productData = {
    "product": [
       {
          "id": 1,
-         "title": "Product Name",
+         "title": "Product Name 1",
          "price": "$ 78"
       },
       {
          "id": 2,
-         "title": "Product Name",
+         "title": "Product Name 2",
          "price": "$ 78"
       },
       {
          "id": 3,
-         "title": "Product Name",
+         "title": "Product Name 3",
          "price": "$ 78"
       },
       {
          "id": 4,
-         "title": "Product Name",
+         "title": "Product Name 4",
          "price": "$ 78"
       },
       {
          "id": 5,
-         "title": "Product Name",
+         "title": "Product Name 5",
          "price": "$ 78"
       },
       {
          "id": 6,
-         "title": "Product Name",
+         "title": "Product Name 6",
          "price": "$ 78"
       },
       {
          "id": 7,
-         "title": "Product Name",
+         "title": "Product Name 7",
          "price": "$ 78"
       },
       {
          "id": 8,
-         "title": "Product Name",
+         "title": "Product Name 8",
          "price": "$ 78"
       },
       {
          "id": 9,
-         "title": "Product Name",
+         "title": "Product Name 9",
          "price": "$ 78"
       },
       {
          "id": 10,
-         "title": "Product Name",
+         "title": "Product Name 10",
          "price": "$ 78"
       }
    ]
@@ -103,6 +103,34 @@ function ready() {
    }
 };
 
+
+//! Adding Product Lists
+function loadProduct(data) {
+
+   let div = document.createElement('div')
+   div.classList.add('pro')
+
+   let productContainer = document.getElementsByClassName('pro-container')[0]
+
+   let productContent = `
+                  <span id="free">Free Shipping</span>
+
+                  <img src="./img/card6.png" alt="product" class="product-img">
+
+                  <div class="des">
+                     <h5 class="product-title">${data.title}</h5>
+                     <h4 class="price">${data.price}</h4>
+                     <span>or 9 x $1.21</span>
+                  </div>
+
+                  <button class="btn add-cart">
+                     Add To Cart
+                  </button>
+`
+   div.innerHTML = productContent
+   productContainer.append(div);
+}
+
 //! Remove Cart Items
 function removeCartItem(event) {
    let buttonClicked = event.target;
@@ -118,8 +146,6 @@ function quantityChanged(event) {
    }
    updateTotal();
 }
-
-
 
 //! Add to Cart
 function addCartClicked(event) {
@@ -184,35 +210,6 @@ function updateTotal() {
 
       document.getElementsByClassName('total-price')[0].innerText = '$' + total;
    }
-
-}
-
-//! Adding Product Lists
-function loadProduct(data) {
-
-   let div = document.createElement('div')
-   div.classList.add('pro')
-
-   let productContainer = document.getElementsByClassName('pro-container')[0]
-
-   let productContent = `
-                  <span id="free">Free Shipping</span>
-
-                  <img src="./img/card6.png" alt="product" class="product-img">
-
-                  <div class="des">
-                     <h5 class="product-title">${data.title}</h5>
-                     <h4 class="price">${data.price}</h4>
-                     <span>or 9 x $1.21</span>
-                  </div>
-
-                  <button class="btn add-cart">
-                     Add To Cart
-                  </button>
-`
-
-   div.innerHTML = productContent
-   productContainer.append(div);
 
 }
 
