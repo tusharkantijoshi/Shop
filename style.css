@@ -266,7 +266,11 @@ a {
   height: inherit;
 }
 
-#sizes-container .btn {
+#sizes-options {
+  width: 100px;
+}
+
+.size-btn {
   background-color: white;
   color: black;
   padding: 15px;
@@ -276,10 +280,18 @@ a {
   cursor: pointer;
 }
 
-#sizes-container .btn:hover {
+.size-btn:hover {
   cursor: pointer;
   background-color: #088178;
   outline: none;
+}
+
+.size-active {
+  background-color: #088178;
+}
+
+.hide {
+  display: none;
 }
 
 #product .pro-container {
@@ -288,6 +300,7 @@ a {
   padding-top: 20px;
   flex-wrap: wrap;
   overflow: auto;
+  width: 100%;
 }
 
 #product .pro {
@@ -380,5 +393,9 @@ a {
 
   #sizes-container {
     margin: 20px 10px;
+  }
+
+  #sizes-options {
+    width: 50px;
   }
 }
