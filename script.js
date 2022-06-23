@@ -245,7 +245,6 @@ function addProductToCart(title, price, productImg) {
                   <div class="cart-price">${price}</div>
                   <input type="number" value="1" class="cart-quantity">
                   </div>
-                  <!-- ! Remove Cart -->
                   <i class="bx bxs-trash-alt cart-remove"></i>
 `
 
